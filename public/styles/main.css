@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+:root {
+    --first-color: #5CDB95;
+    --darker-green: #379683;
+    --bright-green: #8EE4AF;
+    --grey-color: #EDF5E1;
+    --blue-color: #05386B  
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--first-color);
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+header {
+    background-color: var(--bright-green);
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+
+.links {
+    font-size: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: color 400ms ease-in-out 100ms;
+}
+
+.links a + a {
+    margin-left: 20px;
+}
+
+.links a:hover {
+    color: var(--blue-color);
+}
+
+.links .active {
+    font-weight: bold;
+    color: var(--blue-color) ;
+}
+
+.links a::after {
+    content: "";
+    width: 0;
+    height: 4px;
+    background-color: var(--blue-color);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.links a:hover::after {
+    width: 100%;
+    transition: width 500ms ease-in-out;
+}
+
+.card {
+
+    background-color: white;
+    width: 800px;
+    min-height: 400px;
+    margin:45px auto;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+    box-shadow: 0px 2px  6px -2px rgba(0, 0, 0, 0.7);
+    animation-name: up;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+
+}
+
+.image-card {
+    background: url(https://source.unsplash.com/collection/9881186/600x600) no-repeat center center;
+    animation-name: opacity ;
+    animation-duration: 1500ms;
+    animation-timing-function: ease-in;
+}
+
+.dados {
+    padding: 32px;
+}
+
+
+.dados .item {
+    border-bottom: 1px solid var(--darker-green);
+    padding: 16px 0;
+}
+
+.dados .item:last-child {
+    border: none;
+}
+
+.dados h3,
+.dados .item div:nth-child(1) {
+    color: var(--blue-color);
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.7px;
+}
+
+.dados .item div:nth-child(2){
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.dados h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--first-color)
+}
+
+.dados .item span {
+    padding: 8px 16px;
+    background-color: var(--darker-green);
+    border-radius: 16px 16px;
+    color: var(--grey-color);
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(25px)
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
