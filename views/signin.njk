@@ -1,0 +1,48 @@
+{% extends "template/layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+        <section class="image-card"> 
+        </section>
+        <section class="dados">
+        
+            <h3>Details</h3>
+            <form action="">
+                <div class="item">
+                    <div>URL of your picture</div>
+                    <div><input type="url" name="teach_name"></div>
+                </div>
+                <div class="item">
+                    <div>Your full name</div>
+                    <div><input type="text" name="teach_name"></div>
+                </div>
+                <div class="item">
+                    <div>Your date of birth </div>
+                    <div><input type="number" name="years_old"></div>
+                </div>
+                <div class="item">
+                    <div>Education level</div>
+                    <div><select name="eduaction_level" id="level">
+                        <option value="elementary_school">Elementary school</option>
+                        <option value="high_school">High School</option>
+                        <option value="college">College</option>
+                    </select>
+                </div>
+                <div class="item">
+                    <div>Type of class</div>
+                    <div><span><input type="radio" name="radio_input" id="radio">Classroom lesson</span>
+                    <span><input type="radio" name="radio_input" id="radio">Distance learning</span>
+                    </div>
+                </div>
+                <div class="item" id="teach">
+                    <div>Teaching area</div>
+                    <div><input type="text" name="teaching_area"></div>
+                </div>
+                <input type="submit" value="Sign In" id="btnSend">
+            </form>
+        </section>
+    </div>
+
+
+{% endblock content %}

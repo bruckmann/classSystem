@@ -84,7 +84,7 @@ header {
 }
 
 .image-card {
-    background: url(https://source.unsplash.com/collection/9881186/600x600) no-repeat center center;
+    background: url(https://source.unsplash.com/collection/9881186/700x700) no-repeat center center;
     animation-name: opacity ;
     animation-duration: 1500ms;
     animation-timing-function: ease-in;
@@ -112,6 +112,11 @@ header {
     letter-spacing: 0.7px;
 }
 
+#teach {
+    border: none;
+    transition: 200ms;
+}
+
 .dados .item div:nth-child(2){
     color: #555;
     font-weight: bold;
@@ -136,6 +141,45 @@ header {
     text-transform: uppercase;
     font-size: 12px;
 }
+
+
+input, select {
+    width: 100%;
+    height: 20px;
+    background-color: var(--grey-color);
+    outline-color: var(--darker-green) ;
+    border: none;
+}
+
+input {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    height: initial;
+    width: initial;
+    margin-right: 4px;
+}
+
+#btnSend {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    background-color: var(--bright-green);
+    color: var(--blue-color);
+    border-radius: 8px;
+    border: none;
+    transition: 300ms;
+    cursor: pointer;
+}
+
+#btnSend:hover {
+    background-color: var(--first-color);
+    transform: translateY(-5px);
+}
+
+
 
 @keyframes up {
     from {

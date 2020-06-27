@@ -10,8 +10,13 @@ routes.get('/teachers', (req, res) => {
     return res.render('teachers')
 })
 
-routes.get('/students', (req, res) => {
-    return res.render('students')
+routes.get('/teachers/signin', (req, res) => {
+    return res.render('signin')
+})
+
+routes.post('/teachers/signin', (req, res) => {
+    req.body
+    return res.send(req.body)
 })
 
 routes.use(function(req, res) {
