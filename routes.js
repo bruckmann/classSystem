@@ -9,7 +9,9 @@ routes.get('/', (req, res) => {
 })
 
 routes.get('/teachers', (req, res) => {
-    return res.render('teachers/index')
+
+    const teacher = data.teachers
+    return res.render('teachers/index', {teacher})
 })
 
 routes.get('/teachers/signin', (req, res) => {
