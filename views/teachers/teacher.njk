@@ -1,0 +1,46 @@
+{% extends "template/layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+        <section class="image-card"> 
+        </section>
+        <section class="dados">
+        
+            <h3>Details</h3>
+        
+            <div class="item">
+                <div>Teacher name</div>
+                <div>{{teacher.teach_name}}</div>
+            </div>
+            <div class="item">
+                <div>Age</div>
+                <div>{{teacher.years_old}}</div>
+            </div>
+            <div class="item">
+                <div>Education level</div>
+                <div>{{teacher.education_level}}</div>
+            </div>
+            <div class="item">
+                <div>Type of class</div>
+                <div>{{teacher.radio_input}}</div>
+            </div>
+            <div class="item">
+                <div>Subjects</div>
+                <div>
+                    {% for area in teacher.teaching_area %}
+                        <span>{{area}}</span>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+            <div class="item">
+                <div>Since</div>
+                <div>{{teacher.created_at}}</div>
+            </div>
+
+        </section>
+    </div>
+
+
+{% endblock content %}

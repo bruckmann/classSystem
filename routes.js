@@ -16,6 +16,23 @@ routes.get('/teachers/signin', (req, res) => {
     return res.render('teachers/signin')
 })
 
+
+routes.get('/teachers/:id', (req, res) => {
+
+    const {id} = req.params
+
+    const TeacherID = data.teachers.find((teacher) => {
+        return teacher.id == id
+    }) 
+
+    if (!TeacherID) {
+        return res.send('Instructor not-find')
+    }
+
+    return res.render('teachers/teacher', {teacher: TeacherID})
+
+}) 
+
 routes.post('/teachers', (req, res) => {
     
     const keys = Object.keys(req.body)
@@ -26,7 +43,22 @@ routes.post('/teachers', (req, res) => {
         }
     }
 
-    data.teachers.push(req.body)
+    req.body.years_old = Date.parse(req.body.years_old)
+    req.body.created_at = Date.now()
+    req.body.id = Number(data.teachers.length + 1)
+
+    const {teach_avatar, teach_name, years_old, education_level, radio_input, teaching_area, created_at, id} = req.body
+
+    data.teachers.push({
+        id,
+        teach_avatar,
+        teach_name,
+        years_old,
+        education_level,
+        radio_input,
+        teaching_area,
+        created_at,
+    })
 
     fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
 
